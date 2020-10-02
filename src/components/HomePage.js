@@ -46,17 +46,17 @@ const HomePage = (props) => {
     inputRef.current(event.target.value, props);
   }
 
-  function handleSort(sortOrder) {
-    setSortOrder(sortOrder);
-    if (sortOrder.value) {
-      setEmployees(_.orderBy(employees, ['age'], [sortOrder.value]));
-    }
+  function handleSortName(sortOrder) {
+      setSortOrder(sortOrder);
+      if (sortOrder.value) {
+          setEmployees(_.orderBy(employees, ['name'], [sortOrder.value]));
+      }
   }
 
   return (
     <React.Fragment>
       <Header handleSearch={handleSearch} />
-      <Filters handleSort={handleSort} sortOrder={sortOrder} />
+      <Filters handleSort={handleSortName} sortOrder={sortOrder} />
       <EmployeeList employees={employees} isLoading={isLoading} />
     </React.Fragment>
   );

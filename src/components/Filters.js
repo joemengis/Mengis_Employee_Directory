@@ -10,7 +10,7 @@ const Filters = ({ handleSort, sortOrder }) => {
 
   return (
     <div className="sortBy">
-      Sort by age
+      Sort by Name
       <Select
         value={sortOrder}
         className="select-filter"
